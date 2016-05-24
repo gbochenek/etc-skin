@@ -94,6 +94,11 @@ form > table > tbody > tr > td > table:nth-child(3) td > font > a font {
   form > table > tbody > tr > td > table:nth-child(3) td > font > a font::after {
     content: "Logout"; }
 
+.today-col {
+  background: #EFF3F6; }
+  .today-col input[type="text"] {
+    border-color: #bfc8cf; }
+
 form > table table:last-child > tbody > tr > td:last-child > table {
   margin: 10px 0; }
   form > table table:last-child > tbody > tr > td:last-child > table:first-child {

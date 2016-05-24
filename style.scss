@@ -170,6 +170,14 @@ form > table > tbody > tr > td > table:nth-child(3) td {
     }
 }
 
+.today-col {
+    background: $gray-lighter;
+
+    input[type="text"] {
+        border-color: darken($gray-light, 10%);
+    }
+}
+
 form > table table:last-child > tbody > tr > td:last-child > table {
     margin: 10px 0;
 
