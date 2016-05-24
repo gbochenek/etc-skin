@@ -94,8 +94,10 @@ form > table > tbody > tr > td > table:nth-child(3) td > font > a font {
   form > table > tbody > tr > td > table:nth-child(3) td > font > a font::after {
     content: "Logout"; }
 
-form > table table:last-child > tbody > tr > td:last-child > table:last-child {
+form > table table:last-child > tbody > tr > td:last-child > table {
   margin: 10px 0; }
+  form > table table:last-child > tbody > tr > td:last-child > table:first-child {
+    margin-top: 0; }
 
 form > table table:last-child > tbody > tr > td:last-child > table:last-child > tbody > tr:last-child b,
 form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:last-child b {
@@ -346,11 +348,11 @@ td[bgColor="bfbfbf"] {
 
 table[bgcolor="bfbfbf"],
 tr[bgcolor="bfbfbf"],
-form > table table:last-child > tbody > tr > td:last-child > table:last-child {
+form > table table:last-child > tbody > tr > td:last-child > table:nth-child(0n+2) {
   background: #FFF; }
 
 table[bgcolor="bfbfbf"],
-form > table table:last-child > tbody > tr > td:last-child > table:last-child {
+form > table table:last-child > tbody > tr > td:last-child > table:nth-child(0n+2) {
   border-radius: 2px;
   box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.15), 0 -1px 1px 0px rgba(0, 0, 0, 0.05);
   padding: 5px; }

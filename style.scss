@@ -170,8 +170,12 @@ form > table > tbody > tr > td > table:nth-child(3) td {
     }
 }
 
-form > table table:last-child > tbody > tr > td:last-child > table:last-child {
+form > table table:last-child > tbody > tr > td:last-child > table {
     margin: 10px 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
 form > table table:last-child > tbody > tr > td:last-child > table:last-child > tbody > tr:last-child b,
@@ -373,12 +377,12 @@ td[bgColor="bfbfbf"] {
 
 table[bgcolor="bfbfbf"],
 tr[bgcolor="bfbfbf"],
-form > table table:last-child > tbody > tr > td:last-child > table:last-child {
+form > table table:last-child > tbody > tr > td:last-child > table:nth-child(0n+2) {
     background: $content-bg;
 }
 
 table[bgcolor="bfbfbf"],
-form > table table:last-child > tbody > tr > td:last-child > table:last-child {
+form > table table:last-child > tbody > tr > td:last-child > table:nth-child(0n+2) {
     border-radius: $border-radius;
     box-shadow: $content-shadow;
     padding: $padding-base;
