@@ -6,6 +6,9 @@
   font-style: normal;
   src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
   src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg"); }
+* {
+  box-sizing: border-box; }
+
 body {
   background: #EFF3F6;
   font-family: "Open Sans";
@@ -48,7 +51,9 @@ input[name="nav"] {
 input[type="text"] {
   padding: 5px 10px;
   border-radius: 2px;
-  border: 1px solid #DCE1E5; }
+  border: 1px solid #DCE1E5;
+  width: 100%;
+  text-align: right; }
 
 a,
 a b {
@@ -164,26 +169,37 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
           background: #647483;
           border-left: 2px solid #199DDC;
           border-bottom: 0 !important; }
-          form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b:hover .menu-link::before {
+          form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b:hover::before {
             color: #EFF3F6; }
     form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child {
       padding: 10px 10px 0; }
       form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td {
         padding: 5px;
         border-top: 1px solid #DCE1E5; }
+        form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:nth-child(0n + 2) input[type="text"] {
+          text-align: left; }
         form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:nth-child(0n + 3) {
-          color: #708293; }
+          color: #708293;
+          width: 40px; }
           form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:nth-child(0n + 3) input {
-            background: #EFF3F6;
-            width: 30px; }
+            background: #EFF3F6; }
         form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:first-child div {
           font-weight: 600;
-          color: #647483; }
+          color: #647483;
+          width: 100%;
+          position: relative;
+          padding-right: 50px; }
       form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr:first-child td, form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr:nth-child(0n + 2) td {
         padding: 0;
         border-top: 0; }
       form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr:nth-child(0n + 2) td {
         padding-bottom: 5px; }
+
+.wbs-link-container {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); }
 
 .wbs-link {
   color: #DCE1E5;
@@ -334,6 +350,19 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
 
 .menu-link.link-icon-clock-o::before {
   content: "";
+  display: block;
+  position: absolute;
+  left: 1em;
+  color: #708293;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-family: "FontAwesome";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.menu-link.link-icon-meh-o::before {
+  content: "";
   display: block;
   position: absolute;
   left: 1em;

@@ -35,6 +35,10 @@ $font-size:             14px;
 $padding-base:          5px;
 
 //some resets
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: $body-bg;
     font-family: $font-family;
@@ -96,6 +100,8 @@ input[type="text"] {
     padding: $padding-base ($padding-base * 2);
     border-radius: $border-radius;
     border: 1px solid $gray-light;
+    width: 100%;
+    text-align: right;
 }
 
 a,
@@ -272,7 +278,7 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
                     border-left: 2px solid $brand-primary;
                     border-bottom: 0 !important;
 
-                    .menu-link::before {
+                    &::before {
                         color: $gray-lighter;
                     }
                 }
@@ -287,18 +293,25 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
                     padding: $padding-base;
                     border-top: 1px solid $gray-light;
 
+                        &:nth-child(0n + 2) input[type="text"] {
+                            text-align: left;
+                        }
+
                         &:nth-child(0n + 3) {
                             color: $gray;
+                            width: 40px;
 
                             input {
                                 background: $gray-lighter;
-                                width: 30px;
                             }
                         }
 
                         &:first-child div {
                             font-weight: 600;
                             color: $gray-dark;
+                            width: 100%;
+                            position: relative;
+                            padding-right: 50px;
                         }
                 }
 
@@ -315,6 +328,13 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
         }
 
     }
+}
+
+.wbs-link-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .wbs-link {
@@ -354,8 +374,8 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
     }
 }
 
-$icon-names: 'history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'clock-o';
-$icon-codes: '\f1da', '\f000', '\f119', '\f19c', '\f0e3', '\f06e', '\f023', '\f022', '\f002', '\f017';
+$icon-names: 'history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'clock-o', 'meh-o';
+$icon-codes: '\f1da', '\f000', '\f119', '\f19c', '\f0e3', '\f06e', '\f023', '\f022', '\f002', '\f017', '\f11a';
 
 @each $current-icon in $icon-names {
     $i: index($icon-names, $current-icon);

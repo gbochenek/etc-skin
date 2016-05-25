@@ -14,6 +14,7 @@ $.each(
 
         //need to skip all this if the wbs is something like vacation or holiday
         if (ignoredIds.indexOf(wbs) < 0) {
+            var actionContainer = $('<span class="wbs-link-container"></span>');
             //create the links because we know we have at least some details
             var hasProjectDetails = wbs[0] === 'C';
             var projectWbs;
@@ -26,19 +27,21 @@ $.each(
             }
 
             //create domNodes for details and related wbs
+            if (hasProjectDetails) {
+                var projectDetailsLink = baseDetailsLink + projectWbs;
+                $(actionContainer).append('<a href="' + projectDetailsLink + '" target="_blank" class="wbs-link details-wbs-link" data-tooltip-text="' + detailsTooltip + '"><i class="fa fa-info-circle"></i></a>');
+            }
+
+            //now for the related wbs link
             var relatedWbsLink;
             if (hasProjectDetails) {
                 relatedWbsLink = baseRelatedLink + relatedWbsLink + projectWbs;
             } else {
                 relatedWbsLink = baseRelatedLink + relatedIoLink + wbs;
             }
-            $(value).append('<a href="' + relatedWbsLink + '" target="_blank" class="wbs-link related-wbs-link" data-tooltip-text="' + relatedTooltip + '"><i class="fa fa-list"></i></a>');
+            $(actionContainer).append('<a href="' + relatedWbsLink + '" target="_blank" class="wbs-link related-wbs-link" data-tooltip-text="' + relatedTooltip + '"><i class="fa fa-list"></i></a>');
 
-            //now for the details page link
-            if (hasProjectDetails) {
-                var projectDetailsLink = baseDetailsLink + projectWbs;
-                $(value).append('<a href="' + projectDetailsLink + '" target="_blank" class="wbs-link details-wbs-link" data-tooltip-text="' + detailsTooltip + '"><i class="fa fa-info-circle"></i></a>');
-            }
+            $(value).append(actionContainer);
         }
     }
 );
@@ -67,8 +70,11 @@ $.each(
     }
 );
 
-var hrefStrings = ['history', 'javascript:Vacation', 'javascript:Sick', 'javascript:bank', 'javascript:Jury', 'audit', 'javascript:Password', 'ts_summary', 'ts_query', 'ext_hrs_details'];
-var iconStrings = ['history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'clock-o'];
+//create another menu option for overhead request
+$('form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child font').last().append('<br><br><font face="arial" size="1"><a href="http://pswebsp/applications/overhead/ohmenu.aspx" target="_blank" onmouseover="window.status="Overhead Requests"; return true" onmouseout="window.status=""; return true"><font face="arial" color="blue" size="1"><b>Overhead Request</b></font></a><br><br>');
+
+var hrefStrings = ['history', 'javascript:Vacation', 'javascript:Sick', 'javascript:bank', 'javascript:Jury', 'audit', 'javascript:Password', 'ts_summary', 'ts_query', 'ext_hrs_details', 'http://pswebsp/applications/overhead/ohmenu.aspx'];
+var iconStrings = ['history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'clock-o', 'meh-o'];
 $.each(hrefStrings, function(index, value) {
     var el = $('a[href^="' + value + '"] b');
     $(el).attr('class', 'menu-link link-icon-' + iconStrings[index]);
