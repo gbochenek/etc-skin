@@ -129,11 +129,15 @@ form > table > tbody > tr > td > table:first-of-type {
     padding: 10px 0; }
     form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td strong {
       font-weight: normal; }
-    form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td:nth-child(2)::before {
-      color: #fff;
-      font-family: "FontAwesome";
-      content: "\f1d0";
-      margin-right: 5px; }
+
+.user-icon::before {
+  color: #fff;
+  font-family: "FontAwesome";
+  margin-right: 5px; }
+.user-icon.user-rebel::before {
+  content: "\f1d0"; }
+.user-icon.user-empire::before {
+  content: "\f1d1"; }
 
 form > table > tbody > tr > td > table:nth-child(0n + 3) {
   background: #fff;

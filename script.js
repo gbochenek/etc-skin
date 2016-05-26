@@ -1,3 +1,14 @@
+//Set user icon based on id number
+var userId = $('form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td:nth-child(0n + 1) strong font').html();
+var userIcon;
+if (parseInt(userId) < 7018) {
+    userIcon = 'user-empire';
+} else {
+    userIcon = 'user-rebel';
+}
+$('form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td:nth-child(2)').addClass('user-icon ' + userIcon);
+
+//create wbs links
 $.each(
     $('td[id^="chgRow"] div'),
     function(index, value) {

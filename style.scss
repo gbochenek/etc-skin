@@ -222,13 +222,29 @@ form > table > tbody > tr > td > table:first-of-type {
             font-weight: normal;
         }
 
-        //username
-        &:nth-child(2)::before {
-            color: #fff;
-            font-family: "FontAwesome";
-            content: "\f1d0";
-            margin-right: $padding-base;
-        }
+        ////username
+        //&:nth-child(2)::before {
+        //    color: #fff;
+        //    font-family: "FontAwesome";
+        //    content: "\f1d0";
+        //    margin-right: $padding-base;
+        //}
+    }
+}
+
+//username icons
+.user-icon {
+    &::before {
+        color: #fff;
+        font-family: "FontAwesome";
+        margin-right: $padding-base;
+    }
+
+    &.user-rebel::before {
+        content: "\f1d0";
+    }
+    &.user-empire::before {
+        content: "\f1d1";
     }
 }
 
