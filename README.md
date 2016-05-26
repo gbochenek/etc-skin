@@ -15,8 +15,7 @@ There are two chrome extensions needed to apply the theme:
 
 ##Installation
 1. Open the Stylebot options menu and go to the "Styles" tab.
-2. Click "Add New Style" and paste the below string into the URL input.
-```http://www.selfservice/etc/cfdocs/detail```
+2. Click "Add New Style" and paste this url http://www.selfservice/etc/cfdocs/detail into the first input.
 3. Paste the css from [style.css](style.css) into the code box and click "Add".
 4. Navigate to [ETC](http://www.selfservice/etc/cfdocs/detail) and login.
 5. Open the CJS menu and make sure "enable cjs for this host" is selected.
