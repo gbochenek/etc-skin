@@ -22,7 +22,6 @@ body {
 
 div.popupdivhidden {
   display: inline-block;
-  float: left;
   font-family: "Open Sans";
   font-size: 14px;
   padding: 5px;
@@ -59,7 +58,7 @@ a,
 a b {
   color: #199DDC;
   text-decoration: none;
-  border-break: none; }
+  border-bottom: none; }
   a:hover,
   a b:hover {
     color: #147cae;
