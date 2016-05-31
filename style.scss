@@ -314,10 +314,11 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
 
                         &:nth-child(0n + 3) {
                             color: $gray;
-                            width: 40px;
+                            width: 50px;
 
                             input {
                                 background: $gray-lighter;
+                                padding: 5px 8px;
                             }
                         }
 
