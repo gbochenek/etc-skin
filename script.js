@@ -76,20 +76,24 @@ $.each(
       var formattedDay = ("0" + new Date().getDate()).slice(-2);
       var formmatedMonth = ("0" + (new Date().getMonth() + 1)).slice(-2);
       var formattedDate = formmatedMonth + '/' + formattedDay;
+      var colDate = $(value).find('b:first-child').html();
+      var formattedColDate = ('0' + colDate).slice(-5);
 
-      if ($(value).find('b:first-child').html() == formattedDate) {
+      if (formattedColDate == formattedDate) {
           //this is the current day column, use this index for adding classes to the other rows
           todaysColIndex = index + 1;
       }
     }
 );
 //add a class to the column for todays date
-$.each(
-    $(contentRows + '>td:nth-child(0n+' + todaysColIndex + ')'),
-    function(index, value) {
-      $(value).addClass('today-col');
-    }
-);
+if (todaysColIndex) {
+    $.each(
+        $(contentRows + '>td:nth-child(0n+' + todaysColIndex + ')'),
+        function(index, value) {
+          $(value).addClass('today-col');
+        }
+    );
+}
 
 //create another menu option for overhead request
 $('form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child font').last().append('<br><br><font face="arial" size="1"><a href="http://pswebsp/applications/overhead/ohmenu.aspx" target="_blank" onmouseover="window.status="Overhead Requests"; return true" onmouseout="window.status=""; return true"><font face="arial" color="blue" size="1"><b>Overhead Request</b></font></a><br><br>');
