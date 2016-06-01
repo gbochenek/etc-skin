@@ -212,6 +212,11 @@ form > table > tbody > tr > td > table:first-of-type {
     tr:nth-child(2) {
         td {
             display: none;
+
+            .wbs-message-page & {
+                display: table-cell;
+                background: transparent;
+            }
        }
     }
 

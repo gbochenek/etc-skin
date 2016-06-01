@@ -129,6 +129,10 @@ form > table > tbody > tr > td > table:first-of-type {
   form > table > tbody > tr > td > table:first-of-type tr:nth-child(1) td,
   form > table > tbody > tr > td > table:first-of-type tr:nth-child(2) td {
     display: none; }
+    .wbs-message-page form > table > tbody > tr > td > table:first-of-type tr:nth-child(1) td, .wbs-message-page
+    form > table > tbody > tr > td > table:first-of-type tr:nth-child(2) td {
+      display: table-cell;
+      background: transparent; }
   form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td {
     padding: 10px 0; }
     form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td strong {

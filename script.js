@@ -1,3 +1,13 @@
+//set page class for some conditional styles
+var pageTitle = $('body title').html();
+switch (pageTitle) {
+    case 'Charge Number Message':
+        $('body').addClass('wbs-message-page');
+        break;
+    default:
+        $('body').addClass('wbs-detail-page');
+}
+
 //Set user icon based on id number
 var userId = $('form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td:nth-child(0n + 1) strong font').html();
 var userIcon;
