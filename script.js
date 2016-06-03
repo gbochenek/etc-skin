@@ -98,8 +98,8 @@ if (todaysColIndex) {
 //create another menu option for overhead request
 $('form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child font').last().append('<br><br><font face="arial" size="1"><a href="http://pswebsp/applications/overhead/ohmenu.aspx" target="_blank" onmouseover="window.status="Overhead Requests"; return true" onmouseout="window.status=""; return true"><font face="arial" color="blue" size="1"><b>Overhead Request</b></font></a><br><br>');
 
-var hrefStrings = ['history', 'javascript:Vacation', 'javascript:Sick', 'javascript:bank', 'javascript:Jury', 'audit', 'javascript:Password', 'ts_summary', 'ts_query', 'ext_hrs_details', 'http://pswebsp/applications/overhead/ohmenu.aspx'];
-var iconStrings = ['history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'clock-o', 'meh-o'];
+var hrefStrings = ['history', 'javascript:Vacation', 'javascript:Sick', 'javascript:bank', 'javascript:Jury', 'audit', 'javascript:Password', 'ts_summary', 'ts_query', 'rptcno.cfm', 'ext_hrs_details', 'http://pswebsp/applications/overhead/ohmenu.aspx'];
+var iconStrings = ['history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'tasks', 'clock-o', 'meh-o'];
 $.each(hrefStrings, function(index, value) {
     var el = $('a[href^="' + value + '"] b');
     $(el).attr('class', 'menu-link link-icon-' + iconStrings[index]);

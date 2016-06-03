@@ -363,6 +363,19 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.menu-link.link-icon-tasks::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 1em;
+  color: #708293;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-family: "FontAwesome";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 .menu-link.link-icon-clock-o::before {
   content: "";
   display: block;

@@ -395,8 +395,8 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
     }
 }
 
-$icon-names: 'history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'clock-o', 'meh-o';
-$icon-codes: '\f1da', '\f000', '\f119', '\f19c', '\f0e3', '\f06e', '\f023', '\f022', '\f002', '\f017', '\f11a';
+$icon-names: 'history', 'glass', 'frown-o', 'university', 'gavel', 'eye', 'lock', 'list-alt', 'search', 'tasks', 'clock-o', 'meh-o';
+$icon-codes: '\f1da', '\f000', '\f119', '\f19c', '\f0e3', '\f06e', '\f023', '\f022', '\f002', '\f0ae', '\f017', '\f11a';
 
 @each $current-icon in $icon-names {
     $i: index($icon-names, $current-icon);
