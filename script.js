@@ -103,8 +103,8 @@ $.each(
               todaysColIndex = index + 1;
           }
 
-          //if this is the last day of the pay period lets add a class to the header
-          if (JSON.stringify(colDateWithYear) == JSON.stringify(lastDay)) {
+          //if this is the last day of the pay period and it's a sunday lets add a class to the header
+          if ((JSON.stringify(colDateWithYear) == JSON.stringify(lastDay)) && (lastDay.getDay() == 0)) {
               $(value).addClass('last-day-col');
           }
       }

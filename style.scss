@@ -325,13 +325,14 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
                 position: relative;
                 white-space: nowrap;
 
-                &.last-day-submit {
-                    background: darken($gray-darker, 5%);
-
-                    &,
-                    &::before {
-                        color: lighten($gray, 30%);
-                    }
+                &.last-day-submit::after {
+                    content: "GET PAID!";
+                    font-size: 11px;
+                    background: $brand-success;
+                    color: #FFF;
+                    padding: ($padding-base * .8) ($padding-base * 1.2);
+                    border-radius: $padding-base * 2;
+                    margin: 0 ($padding-base * -4) 0 ($padding-base * 3);
                 }
 
                 &:hover {
