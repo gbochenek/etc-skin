@@ -67,25 +67,51 @@ $.each(
     }
 );
 
+
+//get todays date and end of pay period date
+var selectedDate = $('select[name="selpp2"] option:selected').text();
+//strip the start date
+selectedDate = selectedDate.split(' ');
+selectedDate.splice(1, 2);
+selectedDate = selectedDate.join('');
+var lastDay = new Date(selectedDate);
+
+var todaysDay = ('0' + new Date().getDate()).slice(-2);
+var todaysMonth = ('0' + (new Date().getMonth() + 1)).slice(-2);
+var todaysYear = new Date().getFullYear();
+var todaysDate = todaysMonth + '/' + todaysDay;
+var todaysDateObj = new Date(todaysDate + '/' + todaysYear);
+
+//if today is the last day of the pay period lets add a class to the submit/summary menu link
+if (JSON.stringify(todaysDateObj) == JSON.stringify(lastDay)) {
+    $('a[href*="ts_summary"] b').addClass('last-day-submit');
+}
+
+//loop through the header rows and get the index for the current date, and last day of pay period
 var contentRows = 'form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr';
 var todaysColIndex;
-//loop through the header rows and get the index for the current date
 $.each(
     $(contentRows + ':nth-child(0n + 2) td'),
     function(index, value) {
-      var formattedDay = ("0" + new Date().getDate()).slice(-2);
-      var formmatedMonth = ("0" + (new Date().getMonth() + 1)).slice(-2);
-      var formattedDate = formmatedMonth + '/' + formattedDay;
       var colDate = $(value).find('b:first-child').html();
-      var formattedColDate = ('0' + colDate).slice(-5);
+      if (colDate) {
+          var formattedColDate = ('0' + colDate).slice(-5);
+          var colDateWithYear = new Date(formattedColDate + '/' + todaysYear);
 
-      if (formattedColDate == formattedDate) {
-          //this is the current day column, use this index for adding classes to the other rows
-          todaysColIndex = index + 1;
+          if (formattedColDate == todaysDate) {
+              //this is the current day column, use this index for adding classes to the other rows
+              todaysColIndex = index + 1;
+          }
+
+          //if this is the last day of the pay period lets add a class to the header
+          if (JSON.stringify(colDateWithYear) == JSON.stringify(lastDay)) {
+              $(value).addClass('last-day-col');
+          }
       }
     }
 );
-//add a class to the column for todays date
+
+//add a class to the whole column for todays date
 if (todaysColIndex) {
     $.each(
         $(contentRows + '>td:nth-child(0n+' + todaysColIndex + ')'),

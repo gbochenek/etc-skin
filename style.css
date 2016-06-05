@@ -107,6 +107,34 @@ form > table > tbody > tr > td > table:nth-child(3) td > font > a font {
   .today-col input[type="text"] {
     border-color: #bfc8cf; }
 
+.last-day-col {
+  position: relative; }
+  .last-day-col::before {
+    content: "Last day!";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    background: #708293;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    border-radius: 2px;
+    transform: translateX(-50%); }
+  .last-day-col::after {
+    top: -3px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(112, 130, 147, 0);
+    border-top-color: #708293;
+    border-width: 6px;
+    margin-left: -6px; }
+
 form > table table:last-child > tbody > tr > td:last-child > table {
   margin: 10px 0; }
   form > table table:last-child > tbody > tr > td:last-child > table:first-child {
@@ -177,6 +205,10 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
         border-left: 2px solid transparent;
         position: relative;
         white-space: nowrap; }
+        form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b.last-day-submit {
+          background: #262c33; }
+          form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b.last-day-submit, form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b.last-day-submit::before {
+            color: #c7ced5; }
         form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b:hover {
           color: #EFF3F6;
           background: #647483;
