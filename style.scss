@@ -259,14 +259,6 @@ form > table > tbody > tr > td > table:first-of-type {
         strong {
             font-weight: normal;
         }
-
-        ////username
-        //&:nth-child(2)::before {
-        //    color: #fff;
-        //    font-family: "FontAwesome";
-        //    content: "\f1d0";
-        //    margin-right: $padding-base;
-        //}
     }
 }
 
@@ -350,6 +342,10 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
 
         &:last-child {
             padding: ($padding-base * 2) ($padding-base * 2) 0;
+
+            > br {
+                display: none;
+            }
 
             & > table:nth-child(0n + 2) > tbody > tr {
                 > td {
