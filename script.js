@@ -19,9 +19,42 @@ if (parseInt(userId) < 7018) {
 $('form > table > tbody > tr > td > table:first-of-type tr:nth-child(3) td:nth-child(2)').addClass('user-icon ' + userIcon);
 
 //create wbs links
+var wbsNameWidth = $('td[id^="chgRow"] div').width();
 $.each(
     $('td[id^="chgRow"] div'),
     function(index, value) {
+        var wbs = $(value).attr('id');
+
+        //get saved value for this wbs
+        var savedWbsName = localStorage.getItem(wbs);
+        var defaultWbsName = $(value).html();
+        var wbsName = savedWbsName || defaultWbsName;
+
+        //trim extra whitespace from any part of the name, and decode escaped chars
+        wbsName = wbsName.replace(/\s+/g, " ");
+        wbsName = $("<div/>").html(wbsName).text();
+
+        //create text inputs for each row and set their size based on the html
+        var inputEl = $('<input class="wbs-name-input" type="text" autocomplete="on" />').attr({
+            placeholder: wbsName,
+            name: wbs,
+            value: wbsName
+        });
+
+        //empty the container and place the input in the dom
+        $(value).empty();
+        $(value).append(inputEl);
+
+        //update wbs name, use old value if new value is blank
+        $(inputEl).blur(function() {
+            var saveVal = $(inputEl).val() || defaultWbsName;
+            localStorage.setItem(wbs, saveVal);
+            $(inputEl).val(saveVal);
+            $(inputEl).attr({
+                placeholder: saveVal
+            });
+        });
+
         //link strings
         var baseRelatedLink = 'http://arczone.esri.com/utilities/finder/index.cfm?';
         var relatedWbsLink = 'fa=wbs&wbs=';
@@ -30,8 +63,6 @@ $.each(
         var relatedTooltip = 'View Related Numbers';
         var detailsTooltip = 'View Project Details';
         var ignoredIds = ['BERE', 'COMP', 'JURY', 'SICK', 'VACA', 'NOPA', 'HOLI'];
-
-        var wbs = $(value).attr('id');
 
         //need to skip all this if the wbs is something like vacation or holiday
         if (ignoredIds.indexOf(wbs) < 0) {
@@ -66,7 +97,7 @@ $.each(
         }
     }
 );
-
+$('.wbs-name-input').width(wbsNameWidth);
 
 //get todays date and end of pay period date
 var selectedDate = $('select[name="selpp2"] option:selected').text();

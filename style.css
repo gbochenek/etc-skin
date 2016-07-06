@@ -102,6 +102,17 @@ form > table > tbody > tr > td > table:nth-child(3) td > font > a font {
   form > table > tbody > tr > td > table:nth-child(3) td > font > a font::after {
     content: "Logout"; }
 
+input.wbs-name-input[type=text] {
+  text-align: left;
+  min-width: 500px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #647483;
+  border-color: transparent;
+  transition: border-color 150ms linear; }
+  input.wbs-name-input[type=text]:hover, input.wbs-name-input[type=text]:active, input.wbs-name-input[type=text]:focus {
+    border-color: #199DDC; }
+
 .today-col {
   background: #EFF3F6; }
   .today-col input[type="text"] {
@@ -227,6 +238,8 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
       form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td {
         padding: 5px;
         border-top: 1px solid #DCE1E5; }
+        form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:first-child {
+          padding-left: 0; }
         form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:nth-child(0n + 2) input[type="text"] {
           text-align: left; }
         form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr > td:nth-child(0n + 3) {
@@ -240,13 +253,15 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
           color: #647483;
           width: 100%;
           position: relative;
-          padding-right: 50px; }
+          padding-right: 50px;
+          padding-left: 0; }
       form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr:first-child td,
       form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr:nth-child(0n + 2) td {
         padding: 0;
         border-top: 0; }
       form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:last-child > table:nth-child(0n + 2) > tbody > tr:nth-child(0n + 2) td {
-        padding-bottom: 5px; }
+        padding-bottom: 5px;
+        color: #647483; }
 
 .wbs-link-container {
   position: absolute;

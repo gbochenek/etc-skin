@@ -175,6 +175,23 @@ form > table > tbody > tr > td > table:nth-child(3) td {
     }
 }
 
+//WBS Name inputs
+input.wbs-name-input[type=text] {
+    text-align: left;
+    min-width: 500px;
+    font-weight: 600;
+    font-size: 14px;
+    color: $gray-dark;
+    border-color: transparent;
+    transition: border-color 150ms linear;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color:$brand-primary;
+    }
+}
+
 .today-col {
     background: $gray-lighter;
 
@@ -352,6 +369,10 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
                     padding: $padding-base;
                     border-top: 1px solid $gray-light;
 
+                    &:first-child {
+                        padding-left: 0;
+                    }
+
                         &:nth-child(0n + 2) input[type="text"] {
                             text-align: left;
                         }
@@ -372,6 +393,7 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
                             width: 100%;
                             position: relative;
                             padding-right: 50px;
+                            padding-left: 0;
                         }
                 }
 
@@ -383,6 +405,7 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
 
                 &:nth-child(0n + 2) td {
                     padding-bottom: $padding-base;
+                    color: $gray-dark;
                 }
             }
         }

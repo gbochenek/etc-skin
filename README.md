@@ -5,6 +5,7 @@
 An alternate skin for the electronic time card webapp used by esri.
 
 Features:
+- Rename WBS descriptions
 - View related wbs numbers
 - View project details
 - Fluid layout that takes advantage of larger screens
