@@ -43,6 +43,29 @@ module.exports = function(grunt) {
           'style.min.css': 'style.css'
         }
       }
+    },
+
+    copy: {
+      extension: {
+        files: [{
+          src: 'style.min.css',
+          dest: 'etc_extension/styles/'
+        }, {
+          src: 'script.min.js',
+          dest: 'etc_extension/scripts/'
+        }]
+      }
+    },
+
+    zip_directories: {
+      extension: {
+        files: [{
+          filter: 'isDirectory',
+          expand: true,
+          src: ['etc_extension'],
+          dest: './'
+        }]
+      }
     }
     // End of Task Config
   });
@@ -51,4 +74,5 @@ module.exports = function(grunt) {
 
   // Default task
   grunt.registerTask('default', ['uglify', 'sass', 'cssnano']);
+  grunt.registerTask('extension', ['default', 'copy', 'zip_directories']);
 };

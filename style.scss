@@ -1,16 +1,7 @@
-@font-face{
-    font-family:'FontAwesome';
-    font-weight:normal;
-    font-style:normal;
-    src:url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0');
-    src:url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
-        url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
-        url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'),
-        url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
-        url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
-}
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css);
+//Fonts
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600';
 
+//Variables
 $brand-primary:         #199DDC !default;
 $brand-success:         #43ac6a !default;
 $brand-info:            #5bc0de !default;
@@ -178,7 +169,6 @@ form > table > tbody > tr > td > table:nth-child(3) td {
 //WBS Name inputs
 input.wbs-name-input[type=text] {
     text-align: left;
-    min-width: 500px;
     font-weight: 600;
     font-size: 14px;
     color: $gray-dark;
