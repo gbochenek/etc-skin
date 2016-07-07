@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'script.min.js': ['script.js']
+          'etc_extension/scripts/script.min.js': ['script.js']
         }
       }
     },
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'style.min.css': 'style.css'
+          'etc_extension/styles/style.min.css': 'style.css'
         }
       }
     },
@@ -48,11 +48,24 @@ module.exports = function(grunt) {
     copy: {
       extension: {
         files: [{
-          src: 'style.min.css',
-          dest: 'etc_extension/styles/'
+          src: 'manifest.json',
+          dest: 'etc_extension/'
         }, {
-          src: 'script.min.js',
+          expand: true,
+          flatten: true,
+          src: 'bower_components/font-awesome/fonts/*',
+          dest: 'etc_extension/fonts/'
+        }, {
+          expand: true,
+          flatten: true,
+          filter: 'isFile',
+          src: 'bower_components/jquery/dist/jquery.min.js',
           dest: 'etc_extension/scripts/'
+        }, {
+          expand: true,
+          flatten: true,
+          src: 'images/extension_icons/*',
+          dest: 'etc_extension/images/'
         }]
       }
     },
@@ -73,6 +86,7 @@ module.exports = function(grunt) {
   // Task Registration
 
   // Default task
-  grunt.registerTask('default', ['uglify', 'sass', 'cssnano']);
-  grunt.registerTask('extension', ['default', 'copy', 'zip_directories']);
+  grunt.registerTask('default', ['uglify', 'sass', 'cssnano', 'copy']);
+  //Zip extension for chrome upload
+  grunt.registerTask('extension', ['default', 'zip_directories']);
 };

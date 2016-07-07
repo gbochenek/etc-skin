@@ -1,3 +1,5 @@
 .sass-cache
 node_modules
 *.zip
+etc_extension
+bower_components

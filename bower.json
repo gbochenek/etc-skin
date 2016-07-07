@@ -1,0 +1,22 @@
+{
+  "name": "etc-skin",
+  "description": "Style etc",
+  "main": "",
+  "authors": [
+    "Cody Lawson <clawson@esri.com>"
+  ],
+  "license": "Apache-2.0grun",
+  "homepage": "https://github.com/codylawson/etc-skin",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.6.3",
+    "jquery": "^3.0.0"
+  }
+}

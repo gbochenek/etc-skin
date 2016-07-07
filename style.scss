@@ -25,6 +25,9 @@ $font-family:           "Open Sans", Arial, sans-serif;
 $font-size:             14px;
 $padding-base:          5px;
 
+$fa-font-path:          "chrome-extension://__MSG_@@extension_id__/fonts";
+@import "bower_components/font-awesome/scss/font-awesome";
+
 //some resets
 * {
     box-sizing: border-box;
