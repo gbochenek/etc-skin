@@ -167,13 +167,25 @@ form > table > tbody > tr > td > table:nth-child(3) td {
 }
 
 //WBS Name inputs
+.default-wbs-name {
+    visibility: hidden;
+    display: block;
+    height: 0;
+}
+
 input.wbs-name-input[type=text] {
+    width: 100%;
     text-align: left;
     font-weight: 600;
     font-size: 14px;
+    padding: $padding-base;
     color: $gray-dark;
     border-color: transparent;
     transition: border-color 150ms linear;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:hover,
     &:active,

@@ -95,13 +95,23 @@ form > table > tbody > tr > td > table:nth-child(3) td > font > a font {
   form > table > tbody > tr > td > table:nth-child(3) td > font > a font::after {
     content: "Logout"; }
 
+.default-wbs-name {
+  visibility: hidden;
+  display: block;
+  height: 0; }
+
 input.wbs-name-input[type=text] {
+  width: 100%;
   text-align: left;
   font-weight: 600;
   font-size: 14px;
+  padding: 5px;
   color: #647483;
   border-color: transparent;
-  transition: border-color 150ms linear; }
+  transition: border-color 150ms linear;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
   input.wbs-name-input[type=text]:hover, input.wbs-name-input[type=text]:active, input.wbs-name-input[type=text]:focus {
     border-color: #199DDC; }
 
