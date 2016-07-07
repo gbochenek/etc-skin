@@ -4,7 +4,7 @@
   "name": "ETC+",
   "short_name": "Esri ETC",
   "description": "An alternate skin for the electronic time card webapp used by esri",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Cody Lawson",
 
   "icons": {
@@ -19,7 +19,7 @@
         "*://*.selfservice/etc/cfdocs/detail*"
       ],
       "css": ["styles/style.min.css"],
-      "js": ["scripts/jquery-3.0.0.min.js", "scripts/script.min.js"]
+      "js": ["scripts/jquery.min.js", "scripts/script.min.js"]
     }
   ],
 
