@@ -4,8 +4,9 @@
   "name": "ETC+",
   "short_name": "Esri ETC",
   "description": "An alternate skin for the electronic time card webapp used by esri",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "author": "Cody Lawson",
+  "homepage_url": "http://www.selfservice.esri.com/etc/cfdocs/login.cfm",
 
   "icons": {
     "16": "images/icon16.png",
@@ -16,7 +17,9 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.selfservice/etc/cfdocs/detail*"
+        "*://connect.esri.com/etc/cfdocs/*+detail.cfm*",
+        "*://*.selfservice/etc/cfdocs/detail*",
+        "*://*.selfservice.esri.com/etc/cfdocs/detail*"
       ],
       "css": ["styles/style.min.css"],
       "js": ["scripts/jquery.min.js", "scripts/script.min.js"]
@@ -25,15 +28,11 @@
 
   "web_accessible_resources": [
     "images/*.png",
-    "styles/*.css",
-    "scripts/*.js",
     "fonts/*"
   ],
 
   "permissions": [
     "http://fonts.googleapis.com/",
-    "https://fonts.googleapis.com/",
-    "*://*.fonticons.com/*",
-    "*://use.fontawesome.com/*"
+    "https://fonts.googleapis.com/"
   ]
 }

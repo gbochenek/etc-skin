@@ -1,3 +1,27 @@
+var hourInputs = $('form > table > tbody > tr > td > table:nth-child(4) > tbody > tr > td:last-child > table:nth-child(2) > tbody > tr > td input');
+$.each(hourInputs, function(index, inputEl) {
+    var inputName = $(inputEl).attr('name');
+    var inputIndex = inputName.substr(inputName.length - 1);
+    $(inputEl).addClass('hours-input-' + inputIndex);
+
+    if (inputIndex > 1) {
+        $(inputEl).keyup(function() {
+            _updateTotal(inputIndex);
+        })
+    }
+});
+
+var _updateTotal = function(inputIndex) {
+    var totalVal = 0;
+    $.each($('.hours-input-' + inputIndex), function(index, inputEl) {
+        totalVal = parseFloat(totalVal) + parseFloat(($(inputEl).val() || 0));
+    });
+
+    var totalIndex = parseInt(inputIndex) + 1;
+    var totalEl = $('form > table > tbody > tr > td > table:nth-child(4) > tbody > tr > td:last-child > table:nth-child(2) > tbody > tr:last-child > td:nth-child(0n + ' + totalIndex + ') b');
+    totalEl.text(totalVal.toFixed(2));
+};
+
 //set page class for some conditional styles
 var pageTitle = $('body title').html();
 switch (pageTitle) {
@@ -114,7 +138,7 @@ var todaysDateObj = new Date(todaysDate + '/' + todaysYear);
 
 //if today is the last day of the pay period lets add a class to the submit/summary menu link
 if (JSON.stringify(todaysDateObj) == JSON.stringify(lastDay)) {
-    $('a[href*="ts_summary"] b').addClass('last-day-submit');
+    $('a[href*="ts_summary"] b').append('<span class="last-day-submit">GET PAID!</span>');
 }
 
 //loop through the header rows and get the index for the current date, and last day of pay period

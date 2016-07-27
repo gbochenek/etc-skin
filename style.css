@@ -2409,14 +2409,13 @@ form > table > tbody > tr > td > table:nth-child(0n + 4) {
         border-left: 2px solid transparent;
         position: relative;
         white-space: nowrap; }
-        form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b.last-day-submit::after {
-          content: "GET PAID!";
+        form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b .last-day-submit {
           font-size: 11px;
           background: #43ac6a;
           color: #FFF;
           padding: 4px 6px;
           border-radius: 10px;
-          margin: 0 -20px 0 15px; }
+          margin: 0 -15px 0 10px; }
         form > table > tbody > tr > td > table:nth-child(0n + 4) > tbody > tr > td:first-child a b:hover {
           color: #EFF3F6;
           background: #647483;
