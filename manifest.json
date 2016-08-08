@@ -18,6 +18,7 @@
     {
       "matches": [
         "*://connect.esri.com/etc/cfdocs/*+detail.cfm*",
+        "*://connect-east.esri.com/etc/cfdocs/*+detail.cfm*,"
         "*://*.selfservice/etc/cfdocs/detail*",
         "*://*.selfservice.esri.com/etc/cfdocs/detail*"
       ],
