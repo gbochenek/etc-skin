@@ -4,7 +4,7 @@
   "name": "ETC+",
   "short_name": "Esri ETC",
   "description": "An alternate skin for the electronic time card webapp used by esri",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Cody Lawson",
   "homepage_url": "http://www.selfservice.esri.com/etc/cfdocs/login.cfm",
 
