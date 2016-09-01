@@ -2657,6 +2657,10 @@ table[bgcolor="bfbfbf"],
 tr[bgcolor="bfbfbf"],
 form > table table:last-child > tbody > tr > td:last-child > table:nth-child(0n+2) {
   background: #FFF; }
+  
+tr[bgcolor="bfbfbf"]:hover {
+  background: rgb(25, 157, 220)
+}
 
 table[bgcolor="bfbfbf"],
 form > table table:last-child > tbody > tr > td:last-child > table:nth-child(0n+2) {
